@@ -20,9 +20,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <Router>
+
+      <Router>  {/**Enables routing */}
         <div className="App">
-          {/**Navbar displayed*/ }
+          {/**Navbar displayed*/}
           <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="#home">React App</Navbar.Brand>
             <Nav className="mr-auto">
@@ -33,7 +34,7 @@ class App extends Component {
           </Navbar>
 
           <br />
-        {/**Calls each component from the file and displays on seperate webpages: home, read and create*/ }
+          {/**Calls each component from the file and displays on seperate webpages: home, read and create*/}
           <Switch>
             <Route path='/' component={Contents} exact />
             <Route path='/read' component={Footer} exact />
