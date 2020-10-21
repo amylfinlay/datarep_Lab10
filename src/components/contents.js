@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 2
+ * Lab 3
  */
 
 import React from 'react';
