@@ -24,6 +24,7 @@ export class Create extends React.Component {
         }
     }
 
+    /**Creates buttons to submit information entered */
     onChangeTitle(e) {
         this.setState({
             Title: e.target.value
@@ -42,6 +43,7 @@ export class Create extends React.Component {
         });
     }
 
+    /**Submits title, year and poster information that was inserted */
     onSubmit(e) {
         e.preventDefault();
         alert("Movie: " + this.state.Title + " "
@@ -54,12 +56,14 @@ export class Create extends React.Component {
             <div className="App">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
+                        {/**Adds an input to insert movie */}
                         <label>Add Movie Title:</label>
                         <input type='text'
                             className="form-control"
                             value={this.state.Title}
                             onChange={this.onChangeTitle}></input>
                     </div>
+                     {/**Adds an input to insert movie year */}
                     <div className="form-group">
                         <label>Add Movie Year: </label>
                         <input type='text'
@@ -67,6 +71,7 @@ export class Create extends React.Component {
                             value={this.state.Year}
                             onChange={this.onChangeYear}></input>
                     </div>
+                     {/**Adds an input to insert movie poster */}
                     <div className="form-group">
                         <label>Add Movie Poster:</label>
                         <textarea type='text'
@@ -74,6 +79,7 @@ export class Create extends React.Component {
                             value={this.state.Poser}
                             onChange={this.onChangePoster}></textarea>
                     </div>
+                     {/**Adds an submit button */}
                     <div className="form-group">
                         <input type='submit'
                             value="Add Movie"
