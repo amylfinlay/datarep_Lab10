@@ -1,11 +1,11 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 4
+ * Lab 6
  */
 
 import React from 'react';
-
+import axios from 'axios';
 //Creates header class and extends into component
 export class Create extends React.Component {
 
@@ -49,6 +49,22 @@ export class Create extends React.Component {
         alert("Movie: " + this.state.Title + " "
             + this.state.Year + " "
             + this.state.Poster);
+
+            //Creates object with 3 values
+            const newMovie = {
+                title: this.state.Title, 
+                year: this.state.Year,
+                poster: this.state.Poster
+            }
+
+            //Axios talks to server over http, POST sends data to the server
+            axios.post('http://localhost:4000/api/movies', newMovie)
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((err)=>{
+                console.log(err);
+            });
     }
 
     render() {

@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 4
+ * Lab 6
  */
 
 import React from 'react';
@@ -17,10 +17,10 @@ export class Read extends React.Component {
 
     /**Calls json which contains information of movies */
     componentDidMount() {
-        axios.get('https://jsonblob.com/api/jsonblob/520c3b5e-0312-11eb-a6af-cbf00d776032')
+        axios.get('http://localhost:4000/api/movies')
             .then(
                 (response) => {
-                    this.setState({ movies: response.data.Search })
+                    this.setState({ movies: response.data.movies })
 
                 })
             .catch((error) => {
