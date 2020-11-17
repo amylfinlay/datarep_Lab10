@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 6
+ * Lab 7
  */
 
 import React from 'react';
@@ -20,7 +20,7 @@ export class Read extends React.Component {
         axios.get('http://localhost:4000/api/movies')
             .then(
                 (response) => {
-                    this.setState({ movies: response.data.movies })
+                    this.setState({ movies: response.data })
 
                 })
             .catch((error) => {

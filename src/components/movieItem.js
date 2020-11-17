@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 6
+ * Lab 7
  */
 
 import React from 'react';
@@ -16,11 +16,11 @@ export class MovieItem extends React.Component {
                 
                 {/**Displays card which contains different information about the movie */}
                 <Card>
-                    <Card.Header>{this.props.movie.Title}</Card.Header> {/**Displays movie title*/}
+                    <Card.Header>{this.props.movie.title}</Card.Header> {/**Displays movie title*/}
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
-                            <img src={this.props.movie.Poster} width="200" height="200"></img> {/**Displays poster*/}
-                            <p>{this.props.movie.Year}</p> {/**Displays release year*/}
+                            <img src={this.props.movie.poster} alt="Poster" width="200" height="200"></img> {/**Displays poster*/}
+                            <p>{this.props.movie.year}</p> {/**Displays release year*/}
 
                         </blockquote>
                     </Card.Body>
