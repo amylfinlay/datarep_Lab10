@@ -51,7 +51,7 @@ export class Read extends React.Component {
                 {/**Displays this h1 tag */}
                 <h1>This is the read Component.</h1>
                 {/**Create object to pass movies into movies, code is called JSX */}
-                <Movies movies={this.state.movies} ReloadData={this.reloadData}></Movies>
+                <Movies movies={this.state.movies} ReloadData={this.ReloadData}></Movies>
 
             </div>
         );

@@ -18,6 +18,7 @@ export class MovieItem extends React.Component {
         this.DeleteMovie = this.DeleteMovie.bind(this);
     }
 
+    //Asynchronous call which will delete unique ID from mongoDB
     DeleteMovie(e){
         e.preventDefault();
         console.log("Delete:" +this.props.movie._id)
