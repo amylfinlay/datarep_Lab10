@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 7
+ * Lab 9
  */
 
 const express = require('express')
@@ -80,6 +80,15 @@ app.get('/api/movies', (req, res) => {
              movies: mymovies
         });
         */
+})
+
+//Listeing for a http request that has a delete method
+app.delete('/api/movies/:id',(req,res)=>{
+    console.log("Delete Movie: " +req.params.id);
+
+    MovieModel.findByIdAndDelete(req.params.id,(err, data)=>{
+        res.send(data); //sends back data when movie has been deleted
+    })
 })
 
 //Creates callback function

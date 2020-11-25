@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 7
+ * Lab 9
  */
 
 import React from 'react';
@@ -11,6 +11,11 @@ import axios from 'axios';
 //Creates header class and extends into component
 export class Read extends React.Component {
 
+    constructor(){
+        super();
+
+        this.ReloadData = this.ReloadData.bind(this);
+    }
     state = {
         movies: []
     };
@@ -28,13 +33,25 @@ export class Read extends React.Component {
             });
     }
 
+    ReloadData(){
+        axios.get('http://localhost:4000/api/movies')
+        .then(
+            (response) => {
+                this.setState({ movies: response.data })
+
+            })
+        .catch((error) => {
+            console.log(error)
+        });
+    }
+
     render() {
         return (
             <div>
                 {/**Displays this h1 tag */}
                 <h1>This is the read Component.</h1>
                 {/**Create object to pass movies into movies, code is called JSX */}
-                <Movies movies={this.state.movies}></Movies>
+                <Movies movies={this.state.movies} ReloadData={this.reloadData}></Movies>
 
             </div>
         );

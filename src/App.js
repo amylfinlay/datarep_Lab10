@@ -1,8 +1,9 @@
 /**
- * Name: Amy Finlay
- * ID: G00360784
- * Lab 3
- */
+* Name: Amy Finlay
+* ID: G00360784
+* Lab 9
+*/
+
 
 /**Imports different elements from different locations so application will run */
 import React, { Component } from 'react';

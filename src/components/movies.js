@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 7
+ * Lab 9
  */
 
 import React from 'react';
@@ -14,7 +14,7 @@ export class Movies extends React.Component {
         
         return this.props.movies.map(
             (movie) => {
-                return <MovieItem movie={movie}></MovieItem>
+                return <MovieItem movie={movie} ReloadData={this.props.ReloadData}></MovieItem>
             })
     }
 
