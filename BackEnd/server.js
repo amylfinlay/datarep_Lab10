@@ -83,10 +83,10 @@ app.get('/api/movies', (req, res) => {
 })
 
 //Listeing for a http request that has a delete method
-app.delete('/api/movies/:id',(req,res)=>{
-    console.log("Delete Movie: " +req.params.id);
+app.delete('/api/movies/:id', (req, res) => {
+    console.log("Delete Movie: " + req.params.id);
 
-    MovieModel.findByIdAndDelete(req.params.id,(err, data)=>{
+    MovieModel.findByIdAndDelete(req.params.id, (err, data) => {
         res.send(data); //sends back data when movie has been deleted
     })
 })
@@ -98,6 +98,17 @@ app.get('/api/movies/:id', (req, res) => {
     MovieModel.findById(req.params.id, (err, data) => {
         res.json(data);
     })
+})
+
+//Will make asynchronous call to the database and update id called
+app.put('/api/movies/:id', (req, res) => {
+    console.log("Update movie:" + req.params.id);
+    console.log(req.body);
+
+    MovieModel.findByIdAndUpdate(req.params.id, req.body, { new: true },
+        (err, data) => {
+            res.send(data);
+        })
 })
 
 //Post Method that extends from create.js in which movies can be added 

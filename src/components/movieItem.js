@@ -1,13 +1,14 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 9
+ * Lab 8
  */
 
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 //Creates header class and extends into component
 export class MovieItem extends React.Component {
@@ -43,6 +44,7 @@ export class MovieItem extends React.Component {
                             <p>{this.props.movie.year}</p> {/**Displays release year*/}
                         </blockquote>
                     </Card.Body>
+                    <Link to={"/edit/"+this.props.movie._id} className="btn btn-primary">Edit</Link>
                     <Button variant="danger" onClick={this.DeleteMovie}>Delete</Button> {/**Deletes movie */}
                 </Card>
             </div>

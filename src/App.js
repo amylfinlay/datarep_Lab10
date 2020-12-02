@@ -1,9 +1,8 @@
 /**
-* Name: Amy Finlay
-* ID: G00360784
-* Lab 9
-*/
-
+ * Name: Amy Finlay
+ * ID: G00360784
+ * Lab 8
+ */
 
 /**Imports different elements from different locations so application will run */
 import React, { Component } from 'react';
@@ -15,6 +14,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Read } from './components/read';
 import { Create } from './components/create';
+import { Edit } from './components/edit';
 
 /**Class calls component file */
 class App extends Component {
@@ -36,9 +36,10 @@ class App extends Component {
           <br />
           {/**Calls each component from the file and displays on seperate webpages: home, read and create*/}
           <Switch>
-            <Route path='/' component={Contents} exact />
-            <Route path='/read' component={Read} exact />
-            <Route path='/create' component={Create} exact />
+            <Route path='/' component={Contents} exact/>
+            <Route path='/read' component={Read} />
+            <Route path='/create' component={Create} />
+            <Route path='/edit/:id' component={Edit} />
           </Switch>
 
         </div>
