@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 8
+ * Lab 10
  */
 
 /**Imports different elements from different locations so application will run */

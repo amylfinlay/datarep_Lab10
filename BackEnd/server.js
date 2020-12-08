@@ -1,7 +1,7 @@
 /**
  * Name: Amy Finlay
  * ID: G00360784
- * Lab 9
+ * Lab 10
  */
 
 const express = require('express')
@@ -10,6 +10,7 @@ const port = 4000 //port number
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+const path = require('path');
 
 app.use(cors());
 
@@ -20,6 +21,10 @@ app.use(function (req, res, next) {
         "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+//Configuring to where the build and static folders are
+app.use(express.static(path.join(__dirname, '/../build')));
+app.use('/static', express.static(path.join(__dirname, 'build//static')));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -130,6 +135,10 @@ app.post('/api/movies', (req, res) => {
 })
 
 //The port that it is listening at
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname+'/../build/index.html'));
+
+})
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
